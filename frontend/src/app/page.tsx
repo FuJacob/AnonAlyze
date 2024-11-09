@@ -11,7 +11,7 @@ export default function Home() {
     <div className="flex flex-col items-center justify-center min-h-screen">
       <div className={`text-center ${vt323.className} text-white animate-pulse`}>
         <h1 className='text-7xl'>
-          Hello
+          This is bob
         </h1>
       </div>
 
