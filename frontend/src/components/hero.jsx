@@ -10,14 +10,14 @@ const vt323 = VT323({
 
 // JSON data for a private profile
 const profileData = {
-  username: "pakmangames",
-  fullName: "Andy",
-  biography: "mac swe\n⋆･ ｡ﾟ *.* ☆ﾟ.☾ ⋆*･ﾟ:⋆*",
-  followersCount: 234,
-  followsCount: 363,
-  profilePicUrl: "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-19/356235487_1434762333987767_4094130844684754685_n.jpg",
-  profileUrl: "https://www.instagram.com/pakmangames/"
-};
+    username: "ashvinfittech",
+    biography: "otu tron ‘27\ngym | fitness | otech \n@ashvinns",
+    followersCount: 149,
+    followsCount: 144,
+    profilePicUrl: "https://instagram.fdet3-1.fna.fbcdn.net/v/t51.2885-19/461764416_555826633684382_786518577746789413_n.jpg",
+    externalUrl: "https://youtube.com/@ashvinfittech?si=umng39dKcC7yThHD",
+    profileUrl: "https://www.instagram.com/pakmangames/"
+  };
 
 const Hero = () => {
   return (
