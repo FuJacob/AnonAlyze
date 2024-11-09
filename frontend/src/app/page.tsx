@@ -1,5 +1,5 @@
 import { VT323 } from 'next/font/google';
-
+import Navbar from "../components/navbar";
 const vt323 = VT323({
   weight: '400',
   subsets: ['latin'],
@@ -8,16 +8,10 @@ const vt323 = VT323({
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
-      <div className={`text-center ${vt323.className} text-white animate-pulse`}>
-        <h1 className='text-7xl'>
-          Hello
-        </h1>
-      </div>
-
-      <div className={`text-center text-neutral-800 ${vt323.className}`}>
-        <p className='text-3xl'>This is a test</p>
-      </div>
-    </div>
+    <>
+      <main className='antialiased overflow-x-hidden max-w-7xl mx-auto relative z-10 bg-dark-gray min-h-screen text-white flex items-center justify-center'>
+        <Navbar />
+      </main>
+    </>
   );
 }
