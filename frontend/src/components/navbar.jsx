@@ -24,9 +24,8 @@ const Navbar = () => {
         {/* Navbar Links */}
         <nav className={`${isMenuOpen ? 'block' : 'hidden'} lg:block`}>
           <ul className="flex space-x-6">
-            <li><a href="#home" className="hover:text-gray-300">Home</a></li>
-            <li><a href="#services" className="hover:text-gray-300">Services</a></li>
-            <li><a href="#about" className="hover:text-gray-300">About</a></li>
+            <li><a href="/hero" className="hover:text-gray-300">Services</a></li>
+            <li><a href="/about" className="hover:text-gray-300">About</a></li>
           </ul>
         </nav>
       </div>
