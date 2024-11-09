@@ -1,13 +1,6 @@
-import { VT323 } from 'next/font/google';
 import Navbar from "../components/navbar";
 import Hero from "../components/hero";
 import About from "../components/about";
-
-const vt323 = VT323({
-  weight: '400',
-  subsets: ['latin'],
-  display: 'swap',
-});
 
 export default function Home() {
   return (
