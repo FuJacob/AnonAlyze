@@ -14,7 +14,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Title is blank",
+  title: "AnonAlyze",
   description: "Ctrl Hack Delete Hackathon project by andy, ahmed, jacob, jahiem",
 };
 
