@@ -12,7 +12,7 @@ const about = () => {
     <section className="px-6 py-10" id="about">
       <div className={`text-center text-neutral- ${vt323.className} text-3xl`}>
         <div>
-          About
+            About
         </div>
       </div>
     </section>
