@@ -1,14 +1,22 @@
 import React from 'react'
+import { VT323 } from 'next/font/google';
 
-const About = () => {
+const vt323 = VT323({
+    weight: '400',
+    subsets: ['latin'],
+    display: 'swap',
+  });
+
+const about = () => {
   return (
-    <div className="grid grid-cols-4 gap-4">
-      <img src="/images/jacob.png" alt="Jacob" className="w-1/2 h-1/2"/>
-      <img src="/images/ahmed.png" alt="Ahmed" className="w-1/2 h-1/2"/>
-      <img src="/images/andy.png" alt="Andy" className="w-1/2 h-1/2"/>
-      <img src="/images/jahien.png" alt="Jahien" />
-    </div>
+    <section className="px-6 py-10" id="about">
+      <div className={`text-center text-neutral- ${vt323.className} text-3xl`}>
+        <div>
+          About
+        </div>
+      </div>
+    </section>
   );
-}
+};
 
-export default About;
+export default about
