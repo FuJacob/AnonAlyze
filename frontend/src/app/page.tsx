@@ -1,6 +1,6 @@
 import { VT323 } from 'next/font/google';
 import Navbar from "../components/navbar";
-
+import Faq from "../components/faq";
 const vt323 = VT323({
   weight: '400',
   subsets: ['latin'],
@@ -12,6 +12,7 @@ export default function Home() {
     <>
       <main className='antialiased overflow-x-hidden max-w-7xl mx-auto relative z-10 bg-dark-gray min-h-screen text-white flex items-center justify-center'>
         <Navbar />
+      <Faq />
       </main>
     </>
   );
