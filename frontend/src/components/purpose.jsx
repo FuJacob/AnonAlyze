@@ -10,9 +10,9 @@ const vt323 = VT323({
 
 const Purpose = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-dark-gray">
+    <section className=" mt-16 min-h-screen flex items-center justify-center bg-dark-gray">
       <div className="grid grid-cols-1 gap-8 w-3/4">
-        <div className={`text-center ${vt323.className} mb-20`}>
+        <div className={`text-center ${vt323.className} mb-20 backdrop-blur-5xl bg-black/30`}>
           <h1 className="text-3xl mb-5">
             What does <b>AnonAlyze</b> do?
           </h1>
@@ -28,7 +28,7 @@ const Purpose = () => {
           </h3>
         </div>
 
-        <div className={`text-center ${vt323.className}`}>
+        <div className={`text-center ${vt323.className} mb-20 backdrop-blur-5xl bg-black/30`}>
           <h1 className="text-3xl mb-5">
             How does <b>AnonAlyze</b> score?
           </h1>
