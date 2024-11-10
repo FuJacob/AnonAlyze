@@ -22,19 +22,19 @@ app.use(cors({
 
 // Initialize ApifyClient with the API token
 const client = new ApifyClient({
-    token: apiKey,
+  token: apiKey,
 });
 
 const openai = new OpenAI({
-    apiKey: openAiKey,
+  apiKey: openAiKey,
 });
 
 const exampleOutput = {
-    contentShared: "This is the first point",
-    sensitiveInfo: "This is the second point",
-    taggingBehaviour: "This is the third point",
-    privacyImprovements: "This is the fourth point",
-    rating: "AnonAlyze Score: 85/100",
+  contentShared: "This is the first point",
+  sensitiveInfo: "This is the second point",
+  taggingBehaviour: "This is the third point",
+  privacyImprovements: "This is the fourth point",
+  rating: "AnonAlyze Score: 85/100",
 }
 
 // let inputUsername = "";
@@ -63,7 +63,7 @@ app.post('/analyze-privacy', async (req, res) => {
       `${inputUsername}`,
     ],
     resultsType: "posts",
-    resultsLimit: 200, 
+    resultsLimit: 50,
     searchType: "hashtag",
     searchLimit: 1,
   };
@@ -81,12 +81,12 @@ app.post('/analyze-privacy', async (req, res) => {
     const jsonData = JSON.stringify(items);
 
     const completion = await openai.chat.completions.create({
-        model: "gpt-4o-mini",
-        messages: [
-            { role: "system", content: "You are a helpful assistant." },
-            {
-                role: "user",
-                content: `You will be provided with json data of someone's Instagram profile.
+      model: "gpt-4o-mini",
+      messages: [
+        { role: "system", content: "You are a helpful assistant." },
+        {
+          role: "user",
+          content: `You will be provided with json data of someone's Instagram profile.
                 Your role will be to analyze the data and provide a summary of how protected their personal information is and how well they are protecting their personal privacy. 
                 And provide a rating out of 100, of how well their privacy is protected and how well they are protecting their personal information. 
                 Mention if they are sharing any personal information that could be used to identify them, such as their full name, address, phone number, email address, etc. 
@@ -96,8 +96,8 @@ app.post('/analyze-privacy', async (req, res) => {
                 Format it like this example output: ${JSON.stringify(exampleOutput)}.
                 Make sure to follow that format, where the key is the criteria and the value is the sentence relating to that criteria.
                 Here is the json data: ${jsonData}.`,
-            },
-        ],
+        },
+      ],
     });
 
     const privacyAnalysis = JSON.parse(completion.choices[0].message.content);
@@ -105,8 +105,8 @@ app.post('/analyze-privacy', async (req, res) => {
     console.log(completion.choices[0].message.content);
     // Send the retrieved items back to the frontend
     res.json({
-        rawData: items,
-        privacyAnalysis: privacyAnalysis,
+      rawData: items,
+      privacyAnalysis: privacyAnalysis,
     });
   } catch (error) {
     console.error('Error during analysis:', error);
@@ -116,8 +116,8 @@ app.post('/analyze-privacy', async (req, res) => {
 
 
 app.get('/gpt-analysis', (req, res) => {
-    res.json({ message: completion.choices[0].message.content });
-  });
+  res.json({ message: completion.choices[0].message.content });
+});
 
 // Basic route
 app.get('/', (req, res) => {
