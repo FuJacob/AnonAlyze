@@ -20,6 +20,8 @@ const profileData = {
     profileUrl: "https://www.instagram.com/pakmangames/"
 };
 
+const rating = 8; // TEMPORARY PLACEHOLDER
+
 const handleButtonClick = async () => {
     try {
         const response = await fetch('http://localhost:5000/send-url', {
@@ -46,7 +48,7 @@ const Hero = () => {
     };
 
     const handleButtonClick = async () => {
-        if (!username) {
+        if (!inputValue) {
             alert('Please enter a valid username.');
             return;
         }
@@ -89,22 +91,22 @@ const Hero = () => {
                 </div>
 
                 <div className="grid grid-cols-2 gap-4 mt-[-3rem]">
-                    {profile && (
+                    {profileData && (
                         <div className={`text-center ${vt323.className} ${glowEffect} text-3xl border-2 border-gray-500 rounded-lg p-4`}>
                             <img
-                                src={profile.profilePicUrl}
-                                alt={`${profile.username} profile`}
+                                src={profileData.profilePicUrl}
+                                alt={`${profileData.username} profile`}
                                 className="rounded-full w-32 h-32 mx-auto mb-4"
                             />
-                            <h1 className="text-4xl font-bold">{profile.fullName}</h1>
-                            <p className="mt-1 text-2xl">@{profile.username}</p>
-                            <p className="mt-2 text-lg whitespace-pre-line">{profile.biography}</p>
+                            <h1 className="text-4xl font-bold">{profileData.fullName}</h1>
+                            <p className="mt-1 text-2xl">@{profileData.username}</p>
+                            <p className="mt-2 text-lg whitespace-pre-line">{profileData.biography}</p>
                             <p className="mt-4">
-                                Followers: {profile.followersCount} | Following: {profile.followsCount}
+                                Followers: {profileData.followersCount} | Following: {profileData.followsCount}
                             </p>
-                            {profile.profileUrl && (
+                            {profileData.profileUrl && (
                                 <a
-                                    href={profile.profileUrl}
+                                    href={profileData.profileUrl}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-blue-500 mt-4 inline-block"
@@ -117,7 +119,7 @@ const Hero = () => {
 
                     {rating !== null && (
                         <div className={`border-2 border-gray-500 rounded-lg p-4 ${vt323.className} text-3xl ${glowEffect}`}>
-                            Based on the provided Instagram profile data, it appears that the user ({profile.username}) exercises a moderate level of privacy regarding their personal information. They share videos and captions related to their sports activities, specifically basketball, badminton, and gym workouts, but do not disclose sensitive personal information such as their full name, address, phone number, or email address. However, they frequently mention and tag friends and their university, which could potentially help identify them to acquaintances or those in their community.
+                            Based on the provided Instagram profileData data, it appears that the user ({profileData.username}) exercises a moderate level of privacy regarding their personal information. They share videos and captions related to their sports activities, specifically basketball, badminton, and gym workouts, but do not disclose sensitive personal information such as their full name, address, phone number, or email address. However, they frequently mention and tag friends and their university, which could potentially help identify them to acquaintances or those in their community.
 
                             <p className="mt-4"><strong>Privacy Rating: {rating}/10</strong></p>
                         </div>
