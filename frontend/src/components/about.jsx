@@ -14,10 +14,10 @@ const about = () => {
                 <div>
                     <p className="mb-10">About</p>
                     <div className="grid grid-cols-4 gap-4">
-                        <img src="/images/ahmed.png" alt="ahmed" className="w-full h-auto" />
-                        <img src="/images/andy.png" alt="andy" className="w-full h-auto" />
-                        <img src="/images/jacob.png" alt="jacob" className="w-full h-auto" />
-                        <img src="/images/jahien.png" alt="jahien" className="w-auto h-auto" />
+                        <img src="/images/ahmed.png" alt="ahmed" className="w-full h-auto animate-pulse" />
+                        <img src="/images/andy.png" alt="andy" className="w-full h-auto animate-pulse" />
+                        <img src="/images/jacob.png" alt="jacob" className="w-full h-auto animate-pulse" />
+                        <img src="/images/jahien.png" alt="jahien" className="w-auto h-auto animate-pulse" />
                     </div>
                     <div className="grid grid-cols-4 gap-4">
                         <p>Ahmed</p>
