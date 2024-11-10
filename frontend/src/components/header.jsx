@@ -10,7 +10,7 @@ const vt323 = VT323({
 const header = () => {
   return (
     <>
-      <section className="mt-16 px-6 py-10" id="head">
+      <section className="mt-32 px-6 py-10" id="head">
         <div
           className={`text-center text-neutral- ${vt323.className} text-3xl`}
         >
