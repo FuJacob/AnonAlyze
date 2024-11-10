@@ -86,8 +86,6 @@ const Hero = () => {
                 </div>
 
                 <div className="grid grid-cols-1 gap-4">
-                
-
                     {rating !== null && (
                         <div className={`border-2 border-gray-500 rounded-lg p-4 ${vt323.className} text-3xl ${glowEffect}`}>
                             Based on the provided Instagram profileData data, it appears that the user ({profileData.username}) exercises a moderate level of privacy regarding their personal information. They share videos and captions related to their sports activities, specifically basketball, badminton, and gym workouts, but do not disclose sensitive personal information such as their full name, address, phone number, or email address. However, they frequently mention and tag friends and their university, which could potentially help identify them to acquaintances or those in their community.

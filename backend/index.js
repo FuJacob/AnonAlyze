@@ -87,7 +87,9 @@ app.post('/analyze-privacy', async (req, res) => {
         {
           role: "user",
           content: `You will be provided with json data of someone's Instagram profile.
-                Your role will be to analyze the data and provide a summary of how protected their personal information is and how well they are protecting their personal privacy. 
+                Your role will be to analyze the data and provide a summary of how protected their personal information is and how well they are protecting their personal privacy.
+                If the profile is public, analyze the available data and see if they are sharing any personal information that someone doing OSINT can utilize. If private, analyze things such as bio 
+                and see if any OSINT would detect privacy. 
                 And provide a rating out of 100, of how well their privacy is protected and how well they are protecting their personal information. 
                 Mention if they are sharing any personal information that could be used to identify them, such as their full name, address, phone number, email address, etc. 
                 Format the data in a way that can be used to display the information in a user-friendly way on the frontend of a website. 
