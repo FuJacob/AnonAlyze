@@ -72,7 +72,7 @@ const Hero = () => {
                             AnonAlyze!
                         </button>
                     </div>
-                    {/* Edit this for the UI component*/}
+                    {/* Edit this for the UI component, keep loading && tho*/}
                     {loading && <p className="mt-4 text-xl text-yellow-400">Loading...</p>}
                 </div>
 
