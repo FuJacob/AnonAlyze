@@ -1,14 +1,15 @@
 # AnonAlyze
 
 ## 💡 Inspiration
+AnonAlyze's journey began when the four of us used Hackerdex to share our social media accounts. As we explored each other’s profiles, it quickly became clear just how much sensitive information we were all unintentionally sharing online. This experience opened our eyes to the security risks we each faced on social media, especially as we realized how easy it could be for outsiders to misuse our information.
+
 A [survey](https://nypost.com/2024/09/26/lifestyle/nearly-half-of-employed-people-have-fallen-victim-to-cyberattack-or-scam/?utm_source=chatgpt.com) in 2024 revealed that nearly 45% of 20,000 employed adults worldwide have fallen victim to a cyberattack or scam, due to a leakage of their sensitive personal data from social media accounts.  
 What if there was a tool to check how securely you are protecting your privacy?
 
-We wanted to address the problem of the security of personal data on social media platforms, to create a tool for users to easily check what kind of information they may unknowingly be sharing publicly.
 
 ## 🔍 What it does
 
- **AnonAlyze** is a security-first web application that can query publicly available data to inform the user about sensitive information they might be sharing unknowingly by using their Instagram username. Our tool generates a summary of their account privacy and returns personalized tips for the user to encourage and guide them to more digital security. 
+**AnonAlyze** addresses this issue by not only scanning users' profiles to identify publicly accessible data that may put them at risk but also by educating users on cybersecurity best practices. By providing personalized insights into risky social media behaviors, **AnonAlyze** empowers users to make informed choices, helping them protect their privacy and better understand the impact of online exposure. Our tool is dedicated to enhancing security awareness and fostering a safer digital experience for all.
 
 ## ⚙️ How we built it
 
