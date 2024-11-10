@@ -24,8 +24,11 @@ const openai = new OpenAI({
 });
 
 const exampleOutput = {
-    "summary": "This is the summary of the privacy analysis.",
-    "rating": "Anolyze score: 85/100",
+    contentShared: "This is the first point",
+    sensitiveInfo: "This is the second point",
+    taggingBehaviour: "This is the third point",
+    privacyImprovements: "This is the fourth point",
+    rating: "AnonAlyze Score: 85/100",
 }
 
 // Define a route to handle API requests from the frontend
@@ -58,14 +61,16 @@ app.get('/analyze-privacy', async (req, res) => {
                 And provide a rating out of 100, of how well their privacy is protected and how well they are protecting their personal information. 
                 Mention if they are sharing any personal information that could be used to identify them, such as their full name, address, phone number, email address, etc. 
                 Format the data in a way that can be used to display the information in a user-friendly way on the frontend of a website. 
-                Try to limit your response to 2-3 sentences. 
+                Try to limit your response to 3-4 sentences, in point form where it's in the form of a list, similar to this example output. 
+                Also please do not add your own bolding or formatting to the text such as newline, points, or backslash characters, when I said point form I mean just a sentence. 
                 Format it like this example output: ${JSON.stringify(exampleOutput)}.
+                Make sure to follow that format, where the key is the criteria and the value is the sentence relating to that criteria.
                 Here is the json data: ${jsonData}.`,
             },
         ],
     });
 
-    const privacyAnalysis = completion.choices[0].message.content;
+    const privacyAnalysis = JSON.parse(completion.choices[0].message.content);
 
     // Send the retrieved items back to the frontend
     res.json({
