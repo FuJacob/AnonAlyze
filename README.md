@@ -1,9 +1,9 @@
 # AnonAlyze
 
 ## 💡 Inspiration
-**AnonAlyze**'s journey began when the four of us used Hackerdex to share our social media accounts. As we explored each other’s profiles, it quickly became clear just how much sensitive information we were all unintentionally sharing online. This experience opened our eyes to the security risks we each faced on social media, especially as we realized how easy it could be for outsiders to misuse our information.
+**AnonAlyze**'s journey began when having not known each other until now, we used Hackerdex to share our social media accounts. As we explored each other’s profiles, it quickly became clear just how much sensitive information we were all unintentionally sharing online. This opened our eyes to the security risks we each faced on social media, especially as we realized how easy it could be for outsiders to misuse our information.
 
-A [survey](https://nypost.com/2024/09/26/lifestyle/nearly-half-of-employed-people-have-fallen-victim-to-cyberattack-or-scam/?utm_source=chatgpt.com) in 2024 revealed that nearly 45% of 20,000 employed adults worldwide have fallen victim to a cyberattack or scam, due to a leakage of their sensitive personal data from social media accounts.  
+Moreover, a [survey](https://nypost.com/2024/09/26/lifestyle/nearly-half-of-employed-people-have-fallen-victim-to-cyberattack-or-scam/?utm_source=chatgpt.com) in 2024 revealed that nearly 45% of 20,000 employed adults worldwide have fallen victim to a cyberattack or scam, due to a leakage of their sensitive personal data from social media accounts.  
 What if there was a tool to check how securely you are protecting your privacy?
 
 
