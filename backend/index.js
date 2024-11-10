@@ -23,6 +23,11 @@ const openai = new OpenAI({
     apiKey: openAiKey,
 });
 
+const exampleOutput = {
+    "summary": "This is the summary of the privacy analysis.",
+    "rating": "Anolyze score: 85/100",
+}
+
 // Define a route to handle API requests from the frontend
 app.get('/analyze-privacy', async (req, res) => {
   const input = {
@@ -50,10 +55,11 @@ app.get('/analyze-privacy', async (req, res) => {
                 role: "user",
                 content: `You will be provided with json data of someone's Instagram profile.
                 Your role will be to analyze the data and provide a summary of how protected their personal information is and how well they are protecting their personal privacy. 
-                And provide a rating out of 10, of how well their privacy is protected and how well they are protecting their personal information. 
+                And provide a rating out of 100, of how well their privacy is protected and how well they are protecting their personal information. 
                 Mention if they are sharing any personal information that could be used to identify them, such as their full name, address, phone number, email address, etc. 
                 Format the data in a way that can be used to display the information in a user-friendly way on the frontend of a website. 
-                Try to limit your response to 4-5 sentences.
+                Try to limit your response to 2-3 sentences. 
+                Format it like this example output: ${JSON.stringify(exampleOutput)}.
                 Here is the json data: ${jsonData}.`,
             },
         ],
