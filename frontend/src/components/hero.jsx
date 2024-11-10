@@ -78,7 +78,7 @@ const Hero = () => {
                         type="text"
                         value={inputValue}
                         onChange={handleInputChange}
-                        className="text-black text-xl size-11 mb-10 p-6 w-80 h-24 border-2 border-gray-300 rounded text-center focus:ring-4 focus:ring-yellow-400"
+                        className="text-black text-xl size-11 mb-10 p-6 w-80 h-14 border-2 border-gray-300 rounded text-center focus:ring-4 focus:ring-yellow-400"
                         placeholder="Enter your Instagram Username" />
                     <div className="flex justify-center">
                         <button
@@ -90,7 +90,7 @@ const Hero = () => {
                     </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4 mt-[-3rem]">
+                <div className="grid grid-cols-2 gap-4 mt-[-7rem]">
                     {profileData && (
                         <div className={`text-center ${vt323.className} ${glowEffect} text-3xl border-2 border-gray-500 rounded-lg p-4`}>
                             <img
