@@ -1,3 +1,4 @@
+"use client";
 import React from 'react';
 import { VT323 } from 'next/font/google';
 
@@ -21,6 +22,24 @@ const profileData = {
     profileUrl: "https://www.instagram.com/pakmangames/"
 };
 
+const handleButtonClick = async () => {
+    try {
+        const response = await fetch('http://localhost:5000/send-url', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            // body: JSON.stringify({ input: inputValue }),
+            body: JSON.stringify({ input: `https://www.instagram.com/pakmangames/` }),
+        });
+        const data = await response.json();
+        console.log('Response from backend:', data);
+    } catch (error) {
+        // console.error('Error:', error);
+        console.log(error);
+    }
+};
+
 const Hero = () => {
     return (
         <section className="min-h-screen flex items-center justify-center text-white py-[7rem] mb-[-15rem]" id="hero">
@@ -34,7 +53,9 @@ const Hero = () => {
                         placeholder="Enter your Instagram Username" />
                     <div className="flex justify-center">
                         <button
-                            type="button" className="bg-white text-black border-2 border-gray-300 px-4 py-2 rounded shadow hover:bg-gray-100">
+                            onClick={handleButtonClick}
+                            type="button" 
+                            className="bg-white text-black border-2 border-gray-300 px-4 py-2 rounded shadow hover:bg-gray-100">
                             AnonAlyze!
                         </button>
                     </div>
