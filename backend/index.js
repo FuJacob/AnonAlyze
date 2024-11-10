@@ -37,19 +37,30 @@ const exampleOutput = {
     rating: "AnonAlyze Score: 85/100",
 }
 
+// let inputUsername = "";
+
 app.post('/send-url', async (req, res) => {
   const { input } = req.body;
   console.log('Received input from frontend:', input);
+  // inputUsername = input;
 
   res.json({ message: `Received Instagram username: ${input}` });
 });
 
 
 // Define a route to handle API requests from the frontend
-app.get('/analyze-privacy', async (req, res) => {
+app.post('/analyze-privacy', async (req, res) => {
+  const { inputUsername } = req.body;
+
+  // if (!inputUsername) {
+  //   return res.status(400).json({ error: 'Username is required for analysis' });
+  // }
+  console.log(inputUsername);
+
+
   const input = {
     directUrls: [
-      'https://www.instagram.com/ahmed.jder/'
+      `${inputUsername}`,
     ],
     resultsType: "posts",
     resultsLimit: 200, 
@@ -86,6 +97,7 @@ app.get('/analyze-privacy', async (req, res) => {
 
     const privacyAnalysis = JSON.parse(completion.choices[0].message.content);
 
+    console.log(completion.choices[0].message.content);
     // Send the retrieved items back to the frontend
     res.json({
         rawData: items,
