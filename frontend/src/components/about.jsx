@@ -17,7 +17,7 @@ const about = () => {
                         <img src="/images/ahmed.png" alt="ahmed" className="w-full h-auto animate-pulse" />
                         <img src="/images/andy.png" alt="andy" className="w-full h-auto animate-pulse" />
                         <img src="/images/jacob.png" alt="jacob" className="w-full h-auto animate-pulse" />
-                        <img src="/images/jahien.png" alt="jahien" className="w-auto h-auto animate-pulse" />
+                        <img src="/images/jahien.png" alt="jahien" className="h-72 w-72 animate-pulse" />
                     </div>
                     <div className="grid grid-cols-4 gap-4">
                         <p>Ahmed</p>
