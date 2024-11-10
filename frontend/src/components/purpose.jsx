@@ -33,12 +33,18 @@ const Purpose = () => {
             How does <b>AnonAlyze</b> score?
           </h1>
           <h3 className="text-2xl">
-            Anonlyze is a cutting-edge tool designed to analyze social media
-            profiles, providing deep insights into account security and content
-            quality. By evaluating various data points, Anonlyze helps users
-            understand potential vulnerabilities, risks, and areas for
-            improvement, enabling them to maintain a safer and more engaging
-            online presence.
+          <b>Content Shared</b>: The profile is public and shares multiple posts, including photos and videos, making the user’s information accessible to anyone.
+<br/><br/>
+
+<b>Sensitive Information</b>: The profile contains identifiable information, such as the full name "Marco Tonio," which can be used to track or recognize the user.
+<br/><br/>
+
+
+<b>Tagging Behavior</b>: The user tags locations like "Banff National Park" and "Las Vegas, Nevada," revealing their whereabouts and potentially compromising their privacy.
+<br/>
+<br/>
+
+<b>Privacy Improvements</b>: To improve privacy, it's recommended to limit the sharing of personal details like the full name and use private account settings to control who can view the profile.
           </h3>
         </div>
       </div>
