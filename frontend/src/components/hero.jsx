@@ -1,7 +1,9 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
+import axios from 'axios';
 import { VT323 } from 'next/font/google';
 
-// Configure the VT323 font
 const vt323 = VT323({
     weight: '400',
     subsets: ['latin'],
@@ -10,7 +12,7 @@ const vt323 = VT323({
 
 const glowEffect = "shadow-[0_0_10px_rgba(255,255,255,0.5)]";
 
-// JSON data for a private profile
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const profileData = {
     username: "pakmangames",
     fullName: "Andy",
@@ -22,55 +24,93 @@ const profileData = {
 };
 
 const Hero = () => {
+    const [username, setUsername] = useState('');
+    const [profile, setProfile] = useState(null);
+    const [rating, setRating] = useState(null);
+
+    const handleInputChange = (e) => {
+        setUsername(e.target.value);
+    };
+
+    const handleAnalyzeClick = async () => {
+        if (!username) {
+            alert('Please enter a valid url.');
+            return;
+        }
+
+        const profileUrl = `https://www.instagram.com/${username}/`;
+        try {
+            const response = await axios.post('http://localhost:3000/scrape-instagram', {
+                profileUrl: profileUrl
+            });
+
+            if (response.data) {
+                setProfile(response.data.profile);
+                setRating(response.data.rating);
+            }
+        } catch (error) {
+            console.error('Error scraping Instagram:', error);
+            alert('There was an error fetching the Instagram profile. Please try again later.');
+        }
+    };
+
     return (
         <section className="min-h-screen flex items-center justify-center text-white py-[7rem]" id="hero">
             <div className='grid grid-cols-1 grid-rows-2'>
-                {/* Item 1 - Input and Button */}
                 <div className={`text-center ${vt323.className} text-3xl`}>
-                    <p className="mb-10">Try it</p>
+                    <p className="mb-10">Input your Instagram Name</p>
                     <input
                         type="text"
-                        className="text-black text-xl size-10 mb-10 text-lg p-6 w-96 border-2 border-gray-300 rounded text-center"
-                        placeholder="Enter your Instagram Username" />
+                        className="text-black text-xl size-10 mb-10 p-6 w-96 border-2 border-gray-300 rounded text-center"
+                        placeholder="Enter your Instagram Username"
+                        value={username}
+                        onChange={handleInputChange}
+                    />
                     <div className="flex justify-center">
                         <button
-                            type="button" className="bg-white text-black border-2 border-gray-300 px-4 py-2 rounded shadow hover:bg-gray-100">
-                            AnonAlyze Me
+                            type="button"
+                            className="bg-white text-black border-2 border-gray-300 px-4 py-2 rounded shadow hover:bg-gray-100"
+                            onClick={handleAnalyzeClick}
+                        >
+                            AnonAlyze!
                         </button>
                     </div>
                 </div>
 
-                {/* Item 2 and Item 3 - Profile and Placeholder Side by Side */}
                 <div className="grid grid-cols-2 gap-4 mt-[-3rem]">
-                    {/* Item 2 - Profile Data */}
-                    <div className={`text-center ${vt323.className} ${glowEffect} text-3xl border-2 border-gray-500 rounded-lg p-4`}>
-                        <img
-                            src={profileData.profilePicUrl}
-                            alt={`${profileData.username} profile`}
-                            className="rounded-full w-32 h-32 mx-auto mb-4"
-                        />
-                        <h1 className="text-4xl font-bold">{profileData.fullName}</h1>
-                        <p className="mt-1 text-2xl">@{profileData.username}</p>
-                        <p className="mt-2 text-lg whitespace-pre-line">{profileData.biography}</p>
-                        <p className="mt-4">
-                            Followers: {profileData.followersCount} | Following: {profileData.followsCount}
-                        </p>
-                        {profileData.profileUrl && (
-                            <a
-                                href={profileData.profileUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-blue-500 mt-4 inline-block"
-                            >
-                                View Instagram Profile
-                            </a>
-                        )}
-                    </div>
+                    {profile && (
+                        <div className={`text-center ${vt323.className} ${glowEffect} text-3xl border-2 border-gray-500 rounded-lg p-4`}>
+                            <img
+                                src={profile.profilePicUrl}
+                                alt={`${profile.username} profile`}
+                                className="rounded-full w-32 h-32 mx-auto mb-4"
+                            />
+                            <h1 className="text-4xl font-bold">{profile.fullName}</h1>
+                            <p className="mt-1 text-2xl">@{profile.username}</p>
+                            <p className="mt-2 text-lg whitespace-pre-line">{profile.biography}</p>
+                            <p className="mt-4">
+                                Followers: {profile.followersCount} | Following: {profile.followsCount}
+                            </p>
+                            {profile.profileUrl && (
+                                <a
+                                    href={profile.profileUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-blue-500 mt-4 inline-block"
+                                >
+                                    View Instagram Profile
+                                </a>
+                            )}
+                        </div>
+                    )}
 
-                    {/* Item 3 - Placeholder */}
-                    <div className={`border-2 border-gray-500 rounded-lg p-4 ${vt323.className} text-3xl ${glowEffect}`}>
-                    Based on the provided Instagram profile data, it appears that the user (`ashvinfittech`) exercises a moderate level of privacy regarding their personal information. They share videos and captions related to their sports activities, specifically basketball, badminton, and gym workouts, but do not disclose sensitive personal information such as their full name, address, phone number, or email address. However, they frequently mention and tag friends and their university, which could potentially help identify them to acquaintances or those in their community.\n\n**Privacy Rating: 7/10**
-                    </div>
+                    {rating !== null && (
+                        <div className={`border-2 border-gray-500 rounded-lg p-4 ${vt323.className} text-3xl ${glowEffect}`}>
+                            Based on the provided Instagram profile data, it appears that the user ({profile.username}) exercises a moderate level of privacy regarding their personal information. They share videos and captions related to their sports activities, specifically basketball, badminton, and gym workouts, but do not disclose sensitive personal information such as their full name, address, phone number, or email address. However, they frequently mention and tag friends and their university, which could potentially help identify them to acquaintances or those in their community.
+
+                            <p className="mt-4"><strong>Privacy Rating: {rating}/10</strong></p>
+                        </div>
+                    )}
                 </div>
             </div>
         </section>
