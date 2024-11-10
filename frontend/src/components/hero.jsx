@@ -28,7 +28,7 @@ const Hero = () => {
                     <p className="mb-10">Try it</p>
                     <input
                         type="text"
-                        className="mb-10 text-lg p-6 w-96 border-2 border-gray-300 rounded text-center"
+                        className="text-black text-xl size-10 mb-10 text-lg p-6 w-96 border-2 border-gray-300 rounded text-center"
                         placeholder="Enter your Instagram Username" />
                     <div className="flex justify-center">
                         <button
