@@ -12,7 +12,7 @@ const Purpose = () => {
   return (
     <section className="min-h-screen flex items-center justify-center bg-dark-gray mt-[5rem]">
       <div className="grid grid-cols-1 gap-8 w-3/4">
-        <div className={`text-center ${vt323.className}  backdrop-blur-5xl bg-black/30`}>
+        <div className={`text-center ${vt323.className}  backdrop-blur-5xl bg-black/40`}>
           <h1 className="text-3xl mb-5">
             What does <b>AnonAlyze</b> do?
           </h1>
@@ -28,7 +28,7 @@ const Purpose = () => {
           </h3>
         </div>
 
-        <div className={`text-center ${vt323.className} mb-20 backdrop-blur-5xl bg-black/30`}>
+        <div className={`text-center ${vt323.className} mb-20 backdrop-blur-5xl bg-black/40`}>
           <h1 className="text-3xl mb-5">
             How does <b>AnonAlyze</b> score?
           </h1>
