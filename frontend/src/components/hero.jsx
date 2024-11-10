@@ -48,7 +48,7 @@ const Hero = () => {
     };
 
     const handleButtonClick = async () => {
-        if (!username) {
+        if (!inputValue) {
             alert('Please enter a valid username.');
             return;
         }
