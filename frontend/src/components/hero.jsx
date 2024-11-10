@@ -22,26 +22,9 @@ const profileData = {
 
 const rating = 8; // TEMPORARY PLACEHOLDER
 
-const handleButtonClick = async () => {
-    try {
-        const response = await fetch('http://localhost:5000/send-url', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            // body: JSON.stringify({ input: inputValue }),
-            body: JSON.stringify({ input: `https://www.instagram.com/${inputValue}/` }),
-        });
-        const data = await response.json();
-        console.log('Response from backend:', data);
-    } catch (error) {
-        // console.error('Error:', error);
-        console.log(error);
-    }
-};
-
 const Hero = () => {
     const [inputValue, setInputValue] = useState("");
+    const [loading, setLoading] = useState(false);
 
     const handleInputChange = (e) => {
         setInputValue(e.target.value);
@@ -52,20 +35,21 @@ const Hero = () => {
             alert('Please enter a valid username.');
             return;
         }
+        setLoading(true);
         try {
             const response = await fetch('http://localhost:5000/send-url', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                // body: JSON.stringify({ input: inputValue }),
                 body: JSON.stringify({ input: `https://www.instagram.com/${inputValue}/` }),
             });
             const data = await response.json();
             console.log('Response from backend:', data);
         } catch (error) {
-            // console.error('Error:', error);
             console.log(error);
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -83,11 +67,13 @@ const Hero = () => {
                     <div className="flex justify-center">
                         <button
                             onClick={handleButtonClick}
-                            type="button" 
+                            type="button"
                             className="bg-white text-black border-2 border-gray-300 px-4 py-2 rounded shadow hover:bg-gray-100">
                             AnonAlyze!
                         </button>
                     </div>
+                    {/* Edit this for the UI component*/}
+                    {loading && <p className="mt-4 text-xl text-yellow-400">Loading...</p>}
                 </div>
 
                 <div className="grid grid-cols-2 gap-4 mt-[-3rem]">
