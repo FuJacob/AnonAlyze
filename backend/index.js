@@ -1,5 +1,8 @@
 // Import required modules
 import express from 'express';
+
+import cors from 'cors';
+
 import { ApifyClient } from 'apify-client';
 
 import OpenAI from 'openai/index.mjs';
@@ -13,6 +16,9 @@ const openAiKey = process.env.OPENAI_API_KEY;
 
 // Middleware to parse JSON data
 app.use(express.json());
+app.use(cors({
+  origin: 'http://localhost:3000'
+}));
 
 // Initialize ApifyClient with the API token
 const client = new ApifyClient({
@@ -30,6 +36,14 @@ const exampleOutput = {
     privacyImprovements: "This is the fourth point",
     rating: "AnonAlyze Score: 85/100",
 }
+
+app.post('/send-url', async (req, res) => {
+  const { input } = req.body;
+  console.log('Received input from frontend:', input);
+
+  res.json({ message: `Received Instagram username: ${input}` });
+});
+
 
 // Define a route to handle API requests from the frontend
 app.get('/analyze-privacy', async (req, res) => {
