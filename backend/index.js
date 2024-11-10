@@ -72,7 +72,12 @@ app.post('/analyze-privacy', async (req, res) => {
     // Run the actor and retrieve results
     const run = await client.actor("apify/instagram-scraper").call(input);
     const { items } = await client.dataset(run.defaultDatasetId).listItems();
-    
+
+    // for testing
+
+    // console.log(run);
+    // console.log("Items: ");
+    // console.log(JSON.stringify(items));
     const jsonData = JSON.stringify(items);
 
     const completion = await openai.chat.completions.create({
