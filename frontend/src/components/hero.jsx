@@ -82,7 +82,7 @@ const Hero = () => {
                         </button>
                     </div>
                     {/* Edit this for the UI component, keep loading && tho*/}
-                    {loading && <p className="mt-4 text-xl text-yellow-400">Loading...</p>}
+                    {loading && <p className="mt-5 mx-auto w-10 h-10 border-4 border-t-blue-500 border-gray-300 rounded-full animate-spin"></p>}
                 </div>
 
                 <div className="grid grid-cols-2 gap-4 mt-[-7rem]">
