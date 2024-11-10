@@ -12,8 +12,8 @@ const Purpose = () => {
   return (
     <section className="min-h-screen flex items-center justify-center bg-dark-gray">
       <div className="grid grid-cols-1 gap-8 w-3/4">
-        <div className={`text-center ${vt323.className}`}>
-          <h1 className="text-3xl mb-5">What does Anonlyze do?</h1>
+        <div className={`text-center ${vt323.className} mb-5`}>
+          <h1 className="text-3xl mb-5">What does <b>AnonAlyze</b>  do?</h1>
           <h3 className="text-2xl">
             Anonlyze is a cutting-edge tool designed to analyze social media
             profiles, providing deep insights into account security and content
@@ -25,7 +25,7 @@ const Purpose = () => {
         </div>
 
         <div className={`text-center ${vt323.className}`}>
-          <h1 className="text-3xl mb-5">How Does AnonAlyze Score?</h1>
+          <h1 className="text-3xl mb-5">How does <b>AnonAlyze</b> score?</h1>
           <h3 className="text-2xl">
             Anonlyze is a cutting-edge tool designed to analyze social media
             profiles, providing deep insights into account security and content
