@@ -52,7 +52,7 @@ const Hero = () => {
 
                 {/* Item 2 and Item 3 - Profile and Placeholder Side by Side */}
                 <div className="grid grid-cols-2 gap-4 mt-[-3rem]">
-                    {/* Item 2 - Profile Data */}
+                    {/* Item 2 - Profile Data handling */}
                     <div className={`text-center ${vt323.className} ${glowEffect} text-3xl border-2 border-gray-500 rounded-lg p-4`}>
                         <img
                             src={profileData.profilePicUrl}
@@ -77,9 +77,9 @@ const Hero = () => {
                         )}
                     </div>
 
-                    {/* Item 3 - Placeholder */}
+                    {/* Item 3 - Placeholder for privacy handling */}
                     <div className={`border-2 border-gray-500 rounded-lg p-4 ${vt323.className} text-3xl ${glowEffect}`}>
-                    Based on the provided Instagram profile data, it appears that the user (`ashvinfittech`) exercises a moderate level of privacy regarding their personal information. They share videos and captions related to their sports activities, specifically basketball, badminton, and gym workouts, but do not disclose sensitive personal information such as their full name, address, phone number, or email address. However, they frequently mention and tag friends and their university, which could potentially help identify them to acquaintances or those in their community.\n\n**Privacy Rating: 7/10**
+                        Based on the provided Instagram profile data, it appears that the user (`ashvinfittech`) exercises a moderate level of privacy regarding their personal information. They share videos and captions related to their sports activities, specifically basketball, badminton, and gym workouts, but do not disclose sensitive personal information such as their full name, address, phone number, or email address. However, they frequently mention and tag friends and their university, which could potentially help identify them to acquaintances or those in their community.\n\n**Privacy Rating: 7/10**
                     </div>
                 </div>
             </div>
