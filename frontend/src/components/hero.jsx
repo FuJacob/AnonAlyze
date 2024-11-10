@@ -85,32 +85,8 @@ const Hero = () => {
                     {loading && <p className="mt-5 mx-auto w-10 h-10 border-4 border-t-blue-500 border-gray-300 rounded-full animate-spin"></p>}
                 </div>
 
-                <div className="grid grid-cols-2 gap-4 mt-[-7rem]">
-                    {profileData && (
-                        <div className={`text-center ${vt323.className} ${glowEffect} text-3xl border-2 border-gray-500 rounded-lg p-4`}>
-                            <img
-                                src={profileData.profilePicUrl}
-                                alt={`${profileData.username} profile`}
-                                className="rounded-full w-32 h-32 mx-auto mb-4"
-                            />
-                            <h1 className="text-4xl font-bold">{profileData.fullName}</h1>
-                            <p className="mt-1 text-2xl">@{profileData.username}</p>
-                            <p className="mt-2 text-lg whitespace-pre-line">{profileData.biography}</p>
-                            <p className="mt-4">
-                                Followers: {profileData.followersCount} | Following: {profileData.followsCount}
-                            </p>
-                            {profileData.profileUrl && (
-                                <a
-                                    href={profileData.profileUrl}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-blue-500 mt-4 inline-block"
-                                >
-                                    View Instagram Profile
-                                </a>
-                            )}
-                        </div>
-                    )}
+                <div className="grid grid-cols-1 gap-4">
+                
 
                     {rating !== null && (
                         <div className={`border-2 border-gray-500 rounded-lg p-4 ${vt323.className} text-3xl ${glowEffect}`}>
