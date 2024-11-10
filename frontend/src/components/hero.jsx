@@ -87,21 +87,42 @@ const Hero = () => {
                     {loading && <p className="mt-5 mx-auto w-10 h-10 border-4 border-t-blue-500 border-gray-300 rounded-full animate-spin"></p>}
                 </div>
 
-                <div className={`grid grid-cols-1 gap-4 ${pData ? 'block' : 'hidden'}`}>
+                <div className={`grid grid-cols-1 gap-4 ${pData ? 'block backdrop-blur-3xl bg-black' : 'hidden'}`}>
                     {rating !== null && (
                         <div className={`border-2 border-gray-500 rounded-lg p-4 ${vt323.className} text-3xl ${glowEffect}`}>
-                            <h2 className="text-center">{pData ? `Privacy Analysis of ${pData.rawData[0].url.replace("$", "").split("instagram.com/")[1].replace("/", "")}` : ``}</h2>
+                            <h2 className="text-center">{pData ? `Privacy Analysis of ${inputValue}` : ``}</h2>
                             <div>
                                 {pData ? (
-                                    <div className='flex gap-3'>
-                                        <div className="font-bold">Content Shared:</div>
+                                    <div className='gap-3'>
+                                        <div className="font-bold">Content Shared: </div>
                                         {pData.privacyAnalysis.contentShared}
                                     </div>
                                 ) : ''}
                             </div>
-                            <div>{pData ? `Sensitive Information: ${pData.privacyAnalysis.sensitiveInfo}` : ''}</div>
-                            <div>{pData ? `Tagging Behaviour: ${pData.privacyAnalysis.taggingBehaviour}` : ''}</div>
-                            <div>{pData ? `Privacy Improvements: ${pData.privacyAnalysis.privacyImprovements}` : ''}</div>
+                            <div>
+                                {pData ? (
+                                    <div className='gap-3'>
+                                        <div className="font-bold">Sensitive Information: </div>
+                                        {pData.privacyAnalysis.sensitiveInfo}
+                                    </div>
+                                ) : ''}
+                            </div>
+                            <div>
+                                {pData ? (
+                                    <div className='gap-3'>
+                                        <div className="font-bold">Tagging Behaviour: </div>
+                                        {pData.privacyAnalysis.taggingBehaviour}
+                                    </div>
+                                ) : ''}
+                            </div>
+                            <div>
+                                {pData ? (
+                                    <div className='gap-3'>
+                                        <div className="font-bold">Privacy Improvements: </div>
+                                        {pData.privacyAnalysis.privacyImprovements}
+                                    </div>
+                                ) : ''}
+                            </div>
                             <p className="mt-4"><strong>{pData ? pData.privacyAnalysis.rating.replace("$", "") : ''}</strong></p>
                         </div>
                     )}
