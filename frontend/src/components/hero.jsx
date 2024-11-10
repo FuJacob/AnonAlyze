@@ -1,5 +1,5 @@
 "use client";
-import React from 'react';
+import React, { useState } from 'react';
 import { VT323 } from 'next/font/google';
 
 // Configure the VT323 font
@@ -30,7 +30,7 @@ const handleButtonClick = async () => {
                 'Content-Type': 'application/json',
             },
             // body: JSON.stringify({ input: inputValue }),
-            body: JSON.stringify({ input: `https://www.instagram.com/pakmangames/` }),
+            body: JSON.stringify({ input: `https://www.instagram.com/${inputValue}/` }),
         });
         const data = await response.json();
         console.log('Response from backend:', data);
@@ -41,6 +41,30 @@ const handleButtonClick = async () => {
 };
 
 const Hero = () => {
+    const [inputValue, setInputValue] = useState("");
+
+    const handleInputChange = (e) => {
+        setInputValue(e.target.value);
+    };
+
+    const handleButtonClick = async () => {
+        try {
+            const response = await fetch('http://localhost:5000/send-url', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                // body: JSON.stringify({ input: inputValue }),
+                body: JSON.stringify({ input: `https://www.instagram.com/${inputValue}/` }),
+            });
+            const data = await response.json();
+            console.log('Response from backend:', data);
+        } catch (error) {
+            // console.error('Error:', error);
+            console.log(error);
+        }
+    };
+
     return (
         <section className="min-h-screen flex items-center justify-center text-white py-[7rem] mb-[-15rem]" id="hero">
             <div className='grid grid-cols-1 grid-rows-2'>
@@ -49,6 +73,8 @@ const Hero = () => {
                     <p className="mb-10">Input your Instagram URL</p>
                     <input
                         type="text"
+                        valye={inputValue}
+                        onChange={handleInputChange}
                         className="text-black text-xl size-11 mb-10 p-6 w-80 h-24 border-2 border-gray-300 rounded text-center focus:ring-4 focus:ring-yellow-400"
                         placeholder="Enter your Instagram Username" />
                     <div className="flex justify-center">
