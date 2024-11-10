@@ -37,9 +37,12 @@ const exampleOutput = {
     rating: "AnonAlyze Score: 85/100",
 }
 
+let inputUsername = "";
+
 app.post('/send-url', async (req, res) => {
   const { input } = req.body;
   console.log('Received input from frontend:', input);
+  inputUsername = input;
 
   res.json({ message: `Received Instagram username: ${input}` });
 });
@@ -49,7 +52,7 @@ app.post('/send-url', async (req, res) => {
 app.get('/analyze-privacy', async (req, res) => {
   const input = {
     directUrls: [
-      'https://www.instagram.com/ahmed.jder/'
+      `${inputUsername}`,
     ],
     resultsType: "posts",
     resultsLimit: 200, 
