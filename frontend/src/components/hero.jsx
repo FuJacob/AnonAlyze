@@ -1,7 +1,5 @@
-'use client';
-
+"use client";
 import React, { useState } from 'react';
-import axios from 'axios';
 import { VT323 } from 'next/font/google';
 
 const vt323 = VT323({
@@ -22,34 +20,50 @@ const profileData = {
     profileUrl: "https://www.instagram.com/pakmangames/"
 };
 
+const handleButtonClick = async () => {
+    try {
+        const response = await fetch('http://localhost:5000/send-url', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            // body: JSON.stringify({ input: inputValue }),
+            body: JSON.stringify({ input: `https://www.instagram.com/${inputValue}/` }),
+        });
+        const data = await response.json();
+        console.log('Response from backend:', data);
+    } catch (error) {
+        // console.error('Error:', error);
+        console.log(error);
+    }
+};
+
 const Hero = () => {
-    const [username, setUsername] = useState('');
-    const [profile, setProfile] = useState(null);
-    const [rating, setRating] = useState(null);
+    const [inputValue, setInputValue] = useState("");
 
     const handleInputChange = (e) => {
-        setUsername(e.target.value);
+        setInputValue(e.target.value);
     };
 
-    const handleAnalyzeClick = async () => {
+    const handleButtonClick = async () => {
         if (!username) {
             alert('Please enter a valid username.');
             return;
         }
-
-        const profileUrl = `https://www.instagram.com/${username}/`;
         try {
-            const response = await axios.post('http://localhost:3000/scrape-instagram', {
-                profileUrl: profileUrl
+            const response = await fetch('http://localhost:5000/send-url', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                // body: JSON.stringify({ input: inputValue }),
+                body: JSON.stringify({ input: `https://www.instagram.com/${inputValue}/` }),
             });
-
-            if (response.data) {
-                setProfile(response.data.profile);
-                setRating(response.data.rating);
-            }
+            const data = await response.json();
+            console.log('Response from backend:', data);
         } catch (error) {
-            console.error('Error scraping Instagram:', error);
-            alert('There was an error fetching the Instagram profile. Please try again later.');
+            // console.error('Error:', error);
+            console.log(error);
         }
     };
 
@@ -60,17 +74,15 @@ const Hero = () => {
                     <p className="mb-10">Input your Instagram Username</p>
                     <input
                         type="text"
-                        className="text-black text-xl size-10 mb-10 p-6 w-96 border-2 border-gray-300 rounded text-center"
-                        placeholder="Enter your Instagram Username"
-                        value={username}
+                        value={inputValue}
                         onChange={handleInputChange}
-                    />
+                        className="text-black text-xl size-11 mb-10 p-6 w-80 h-24 border-2 border-gray-300 rounded text-center focus:ring-4 focus:ring-yellow-400"
+                        placeholder="Enter your Instagram Username" />
                     <div className="flex justify-center">
                         <button
-                            type="button"
-                            className="bg-white text-black border-2 border-gray-300 px-4 py-2 rounded shadow hover:bg-gray-100"
-                            onClick={handleAnalyzeClick}
-                        >
+                            onClick={handleButtonClick}
+                            type="button" 
+                            className="bg-white text-black border-2 border-gray-300 px-4 py-2 rounded shadow hover:bg-gray-100">
                             AnonAlyze!
                         </button>
                     </div>
