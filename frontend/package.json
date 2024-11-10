@@ -9,11 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+<<<<<<< HEAD
     "axios": "^1.7.7",
+=======
+    "animated-backgrounds": "^1.0.11",
+>>>>>>> 20b6f3ca73bb6011e79eaea67b343f42a99a252f
     "framer-motion": "^11.11.11",
     "next": "15.0.3",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-tsparticles": "^2.12.2",
+    "tsparticles": "^3.5.0"
   },
   "devDependencies": {
     "@types/node": "^20",

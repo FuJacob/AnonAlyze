@@ -12,7 +12,6 @@ const vt323 = VT323({
 
 const glowEffect = "shadow-[0_0_10px_rgba(255,255,255,0.5)]";
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const profileData = {
     username: "pakmangames",
     fullName: "Andy",
@@ -34,7 +33,7 @@ const Hero = () => {
 
     const handleAnalyzeClick = async () => {
         if (!username) {
-            alert('Please enter a valid url.');
+            alert('Please enter a valid username.');
             return;
         }
 
@@ -55,10 +54,10 @@ const Hero = () => {
     };
 
     return (
-        <section className="min-h-screen flex items-center justify-center text-white py-[7rem]" id="hero">
+        <section className="min-h-screen flex items-center justify-center text-white py-[7rem] mb-[-15rem]" id="hero">
             <div className='grid grid-cols-1 grid-rows-2'>
                 <div className={`text-center ${vt323.className} text-3xl`}>
-                    <p className="mb-10">Input your Instagram Name</p>
+                    <p className="mb-10">Input your Instagram Username</p>
                     <input
                         type="text"
                         className="text-black text-xl size-10 mb-10 p-6 w-96 border-2 border-gray-300 rounded text-center"

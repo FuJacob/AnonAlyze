@@ -12,18 +12,18 @@ const about = () => {
         <section className="px-6 py-10" id="about">
             <div className={`text-center text-neutral- ${vt323.className} text-3xl`}>
                 <div>
-                    <p className="mb-10">About</p>
+                    <p className="mb-10">Meet the Team</p>
                     <div className="grid grid-cols-4 gap-4">
                         <img src="/images/ahmed.png" alt="ahmed" className="w-full h-auto animate-pulse" />
                         <img src="/images/andy.png" alt="andy" className="w-full h-auto animate-pulse" />
                         <img src="/images/jacob.png" alt="jacob" className="w-full h-auto animate-pulse" />
-                        <img src="/images/jahien.png" alt="jahien" className="w-auto h-auto animate-pulse" />
+                        <img src="/images/jahien.png" alt="jahien" className="h-72 w-72 animate-pulse" />
                     </div>
                     <div className="grid grid-cols-4 gap-4">
                         <p>Ahmed</p>
                         <p>Andy</p>
                         <p>Jacob</p>
-                        <p>Jahien</p>
+                        <p>Jahiem</p>
 
                     </div>
                 </div>
