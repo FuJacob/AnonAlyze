@@ -21,7 +21,7 @@ const header = () => {
               className="w-1/3"
             />
           </div>
-          <h1 className='text-5xl animate-pulse'>Unmasking Risks, Protecting Privacy</h1>
+          <h1 className='text-5xl animate-pulse mb-[-5rem] mt-7'>Unmasking Risks, Protecting Privacy</h1>
         </div>
       </section>
     </>
