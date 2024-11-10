@@ -27,10 +27,10 @@ const Hero = () => {
             <div className='grid grid-cols-1 grid-rows-2'>
                 {/* Item 1 - Input and Button */}
                 <div className={`text-center ${vt323.className} text-3xl`}>
-                    <p className="mb-10">Try it</p>
+                    <p className="mb-10">Input your Instagram URL</p>
                     <input
                         type="text"
-                        className="text-black text-xl size-10 mb-10 text-lg p-6 w-96 border-2 border-gray-300 rounded text-center"
+                        className="text-black text-xl size-10 mb-10 p-6 w-96 border-2 border-gray-300 rounded text-center"
                         placeholder="Enter your Instagram Username" />
                     <div className="flex justify-center">
                         <button
