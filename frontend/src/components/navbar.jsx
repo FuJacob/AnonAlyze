@@ -9,7 +9,7 @@ const Navbar = () => {
       <div className="flex justify-between items-center max-w-6xl mx-auto md:my-2 bg-stone-900/30 p-4 md:rounded-xl backdrop-blur-lg">
         {/* Brand Name with the requested style */}
         <div className="text-white font-semibold text-lg uppercase text-glow">
-        <img src="/images/ahmed.png" alt="ahmed" className="w-full h-auto animate-pulse" />
+        <img src="/images/logo.png" alt="logo" className="w-[60px] h-[auto] " />
         </div>
 
         {/* Mobile Hamburger Menu */}
