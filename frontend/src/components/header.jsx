@@ -14,7 +14,7 @@ const header = () => {
         <div
           className={`text-center text-neutral- ${vt323.className} text-3xl`}
         >
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center animate-fadeIn2">
             <img
               src="/images/logo.png"
               alt="Analyze Logo"
