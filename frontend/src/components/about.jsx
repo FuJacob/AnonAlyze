@@ -23,7 +23,7 @@ const about = () => {
                         <p>Ahmed</p>
                         <p>Andy</p>
                         <p>Jacob</p>
-                        <p>Jahien</p>
+                        <p>Jahiem</p>
 
                     </div>
                 </div>
