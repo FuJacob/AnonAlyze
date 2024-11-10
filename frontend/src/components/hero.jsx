@@ -20,6 +20,8 @@ const profileData = {
     profileUrl: "https://www.instagram.com/pakmangames/"
 };
 
+const rating = 8; // TEMPORARY PLACEHOLDER
+
 const handleButtonClick = async () => {
     try {
         const response = await fetch('http://localhost:5000/send-url', {
