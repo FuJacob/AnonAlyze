@@ -52,7 +52,9 @@ app.get('/analyze-privacy', async (req, res) => {
                 Your role will be to analyze the data and provide a summary of how protected their personal information is and how well they are protecting their personal privacy. 
                 And provide a rating out of 10, of how well their privacy is protected and how well they are protecting their personal information. 
                 Mention if they are sharing any personal information that could be used to identify them, such as their full name, address, phone number, email address, etc. 
-                Here is the json data: ${jsonData}`,
+                Format the data in a way that can be used to display the information in a user-friendly way on the frontend of a website. 
+                Try to limit your response to 4-5 sentences.
+                Here is the json data: ${jsonData}.`,
             },
         ],
     });
