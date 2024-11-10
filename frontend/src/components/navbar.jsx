@@ -4,9 +4,9 @@ import { VT323 } from 'next/font/google';
 
 // Configure the VT323 font
 const vt323 = VT323({
-    weight: '400',
-    subsets: ['latin'],
-    display: 'swap',
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
 });
 
 const Navbar = () => {
@@ -16,8 +16,9 @@ const Navbar = () => {
     <div className={`fixed top-0 left-0 w-full z-50 bg-dark-gray text-white p-4 shadow-lg ${vt323.className}`}>
       <div className="flex justify-between items-center max-w-6xl mx-auto md:my-2 bg-stone-900/30 p-4 md:rounded-xl backdrop-blur-lg">
         {/* Brand Name with the requested style */}
-        <div className="text-white font-semibold text-lg uppercase text-glow">
         <a href="#"><img src="/images/logo.png" alt="logo" className="w-[60px] h-[auto]" /></a>
+        <div className="hover:text-gray-300 text-glow text-center flex" style={{ fontStyle: 'italic' }}>
+          "Knowledge is the key to security, and AnonAlyze is the tool to unlock it."
         </div>
 
         {/* Mobile Hamburger Menu */}
