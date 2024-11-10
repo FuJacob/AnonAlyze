@@ -49,10 +49,10 @@ app.post('/send-url', async (req, res) => {
 app.get('/analyze-privacy', async (req, res) => {
   const input = {
     directUrls: [
-      'https://www.instagram.com/ashvinfittech/'
+      'https://www.instagram.com/ahmed.jder/'
     ],
     resultsType: "posts",
-    resultsLimit: 200,
+    resultsLimit: 200, 
     searchType: "hashtag",
     searchLimit: 1,
   };
