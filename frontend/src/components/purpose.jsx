@@ -12,15 +12,11 @@ const Purpose = () => {
   return (
     <section className="min-h-screen flex items-center justify-center bg-dark-gray">
       <div className="grid grid-cols-1 gap-8 w-3/4">
-        <div className={`text-center ${vt323.className} mb-5`}>
+        <div className={`text-center ${vt323.className} mb-20`}>
           <h1 className="text-3xl mb-5">What does <b>AnonAlyze</b>  do?</h1>
           <h3 className="text-2xl">
-            Anonlyze is a cutting-edge tool designed to analyze social media
-            profiles, providing deep insights into account security and content
-            quality. By evaluating various data points, Anonlyze helps users
-            understand potential vulnerabilities, risks, and areas for
-            improvement, enabling them to maintain a safer and more engaging
-            online presence.
+            AnonAlyze is a cutting-edge tool that re-engineers the process of determining how risky an individual's social media is
+            to their privacy and secruity.
           </h3>
         </div>
 
