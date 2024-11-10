@@ -51,7 +51,7 @@ const Hero = () => {
                 </div>
 
                 {/* Item 2 and Item 3 - Profile and Placeholder Side by Side */}
-                <div className="grid grid-cols-2 gap-4 mt-[-3rem]">
+                <div className="grid grid-cols-2 gap-4 mt-[-6rem]">
                     {/* Item 2 - Profile Data handling */}
                     <div className={`text-center ${vt323.className} ${glowEffect} text-3xl border-2 border-gray-500 rounded-lg p-4`}>
                         <img
