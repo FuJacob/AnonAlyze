@@ -21,6 +21,16 @@ const profileData = {
     profileUrl: "https://www.instagram.com/pakmangames/"
 };
 
+const openRating = {
+    username: "pakmangames",
+    fullName: "Andy",
+    biography: "mac swe\n⋆･ ｡ﾟ *.* ☆ﾟ.☾ ⋆*･ﾟ:⋆*",
+    followersCount: 234,
+    followsCount: 363,
+    profilePicUrl: "https://scontent-scl2-1.cdninstagram.com/v/t51.2885-19/356235487_1434762333987767_4094130844684754685_n.jpg?stp=dst-jpg_e0_s150x150&_nc_ht=scontent-scl2-1.cdninstagram.com&_nc_cat=111&_nc_ohc=r0bhG7mvm6wQ7kNvgHeag9k&_nc_gid=46889b8d49474d29bee210694f42daf0&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AYAKKyopUV-wF6-h25uq2PUimNH8pMZR6n10vywA3mS2pw&oe=673573C6&_nc_sid=8b3546",
+    profileUrl: "https://www.instagram.com/pakmangames/"
+};
+
 const Hero = () => {
     return (
         <section className="min-h-screen flex items-center justify-center text-white py-[7rem] mb-[-15rem]" id="hero">
@@ -30,11 +40,11 @@ const Hero = () => {
                     <p className="mb-10">Input your Instagram URL</p>
                     <input
                         type="text"
-                        className="text-black text-xl size-11 mb-10 p-6 w-80 h-24 border-2 border-gray-300 rounded text-center focus:ring-4 focus:ring-yellow-400"
+                        className="text-black text-xl size-11 mb-10 p-6 w-80 h-14 border-2 border-gray-300 rounded text-center focus:ring-4 focus:ring-yellow-400"
                         placeholder="Enter your Instagram Username" />
                     <div className="flex justify-center">
                         <button
-                            type="button" className="bg-white text-black border-2 border-gray-300 px-4 py-2 rounded shadow hover:bg-gray-100">
+                            type="button" className="bg-white text-black border-2 border-gray-300 px-4 py-2 h-14 rounded shadow hover:bg-gray-100">
                             AnonAlyze!
                         </button>
                     </div>
@@ -42,7 +52,7 @@ const Hero = () => {
 
                 {/* Item 2 and Item 3 - Profile and Placeholder Side by Side */}
                 <div className="grid grid-cols-2 gap-4 mt-[-3rem]">
-                    {/* Item 2 - Profile Data */}
+                    {/* Item 2 - Profile Data handling */}
                     <div className={`text-center ${vt323.className} ${glowEffect} text-3xl border-2 border-gray-500 rounded-lg p-4`}>
                         <img
                             src={profileData.profilePicUrl}
@@ -67,9 +77,9 @@ const Hero = () => {
                         )}
                     </div>
 
-                    {/* Item 3 - Placeholder */}
+                    {/* Item 3 - Placeholder for privacy handling */}
                     <div className={`border-2 border-gray-500 rounded-lg p-4 ${vt323.className} text-3xl ${glowEffect}`}>
-                    Based on the provided Instagram profile data, it appears that the user (`ashvinfittech`) exercises a moderate level of privacy regarding their personal information. They share videos and captions related to their sports activities, specifically basketball, badminton, and gym workouts, but do not disclose sensitive personal information such as their full name, address, phone number, or email address. However, they frequently mention and tag friends and their university, which could potentially help identify them to acquaintances or those in their community.\n\n**Privacy Rating: 7/10**
+                        Based on the provided Instagram profile data, it appears that the user (`ashvinfittech`) exercises a moderate level of privacy regarding their personal information. They share videos and captions related to their sports activities, specifically basketball, badminton, and gym workouts, but do not disclose sensitive personal information such as their full name, address, phone number, or email address. However, they frequently mention and tag friends and their university, which could potentially help identify them to acquaintances or those in their community.\n\n**Privacy Rating: 7/10**
                     </div>
                 </div>
             </div>
