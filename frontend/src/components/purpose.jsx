@@ -10,7 +10,7 @@ const vt323 = VT323({
 
 const Purpose = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-dark-gray mt-[5rem]">
+    <section className="min-h-screen flex items-center justify-center bg-dark-gray mt-[10rem]">
       <div className="grid grid-cols-1 gap-8 w-3/4">
         <div className={`text-center ${vt323.className}  backdrop-blur-5xl bg-black/40`}>
           <h1 className="text-3xl mb-5">
