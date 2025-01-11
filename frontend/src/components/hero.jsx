@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { VT323 } from 'next/font/google';
 
-const get_API_URL = 'http://localhost:4000' || 'https://anonalyze.onrender.com'
+const get_API_URL = "http://localhost:4000" || "https://aabackend-tu8e.onrender.com";
 
 const vt323 = VT323({
     weight: '400',
