@@ -10,14 +10,14 @@ import OpenAI from 'openai/index.mjs';
 import 'dotenv/config';
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 const apiKey = process.env.APIFY_API_KEY;
 const openAiKey = process.env.OPENAI_API_KEY;
 
 // Middleware to parse JSON data
 app.use(express.json());
 app.use(cors({
-  origin: 'http://localhost:3000'
+  origin: '*'
 }));
 
 // Initialize ApifyClient with the API token

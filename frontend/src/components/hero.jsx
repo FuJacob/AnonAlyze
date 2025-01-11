@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import { VT323 } from 'next/font/google';
 
+const get_API_URL = 'http://localhost:4000' || 'https://anonalyze.onrender.com'
+
 const vt323 = VT323({
     weight: '400',
     subsets: ['latin'],
@@ -38,21 +40,25 @@ const Hero = () => {
         }
         setLoading(true);
         try {
-            await fetch('http://localhost:5000/send-url', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ input: `https://www.instagram.com/${inputValue}/` }),
+            await fetch(`${get_API_URL}/send-url`, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                input: `https://www.instagram.com/${inputValue}/`,
+              }),
             });
 
-            const response = await fetch('http://localhost:5000/analyze-privacy', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                // body: JSON.stringify({ input: inputValue }),
-                body: JSON.stringify({ inputUsername: `https://www.instagram.com/${inputValue}/` }),
+            const response = await fetch(`${get_API_URL}/analyze-privacy`, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              // body: JSON.stringify({ input: inputValue }),
+              body: JSON.stringify({
+                inputUsername: `https://www.instagram.com/${inputValue}/`,
+              }),
             });
             const data = await response.json();
             console.log('Response from backend:', data);
