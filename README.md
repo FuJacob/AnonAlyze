@@ -9,6 +9,7 @@
 </h1>
 
 <h4 align="center">A cybersecurity awareness tool built with <a href="https://nextjs.org/" target="_blank">Next.js</a>.</h4>
+<a href="https://devpost.com/software/anonalyze"><h4 align="center">Best Security Hack at York University Hackathon 2024</h4></a>
 
 <p align="center">
 <a href="#key-features">What is it?</a> •
