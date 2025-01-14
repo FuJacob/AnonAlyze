@@ -2,7 +2,7 @@
 
 <h1 align="center">
   <br>
-  <a href="https://anonalyze.vercel.app/"><img src="https://raw.githubusercontent.com/FuJacob/AnonAlyze/275173911d6c6deabf253e2ef8493277aa20f02e/LOGOAA.svg" alt="AnonAlyze" width="600"></a>
+  <a href="https://anonalyze.onrender.com/"><img src="https://raw.githubusercontent.com/FuJacob/AnonAlyze/275173911d6c6deabf253e2ef8493277aa20f02e/LOGOAA.svg" alt="AnonAlyze" width="600"></a>
   <br>
   AnonAlyze
   <br>
@@ -18,9 +18,8 @@
   <a href="#license">License</a>
 </p>
 
-![screenshot](https://raw.githubusercontent.com/FuJacob/AnonAlyze/refs/heads/main/home.png)
 ![screenshot](https://raw.githubusercontent.com/FuJacob/AnonAlyze/refs/heads/main/home1.png)
-
+![screenshot](https://raw.githubusercontent.com/FuJacob/AnonAlyze/refs/heads/main/home.png)
 
 
 ## Try AnonAlyze now on <a href="https://anonalyze.onrender.com/" target="_blank"> https://anonalyze.onrender.com/</a>
